@@ -13,13 +13,13 @@ using RabbitMQ.Client.Events;
 
 namespace MicroRabbit.Infra.Bus
 {
-    public sealed class RabbitMqBus : IEventBus
+    public sealed class RabbitBus : IEventBus
     {
         private readonly IMediator _mediator;
         private readonly Dictionary<string, List<Type>> _handlers;
         private readonly List<Type> _evenTypes;
 
-        public RabbitMqBus(IMediator mediator)
+        public RabbitBus(IMediator mediator)
         {
             _mediator = mediator;
             _handlers = new Dictionary<string, List<Type>>();
